@@ -1,20 +1,19 @@
-# PInJung. InJung Interpreter with Python
-# Copyright 2016 HyungJu SUNG<sungkisa@naver.com>
+# PinJung 
+# Copyright HyungJu SUNG <sungkisa@naver.com>
+# 0.1.1: code cleaning, applied color to the terminal using the termcolor
 
 import sys
-pinjung_mode = "unstrict"
-pinjung_version = "0.1"
+from termcolor import colored
+pinjung_mode = "strict" #Default: strict
+pinjung_version = "0.1.1"
 
 def interpret(filename):
-	dzdw = open(filename, 'r')
-	source=dzdw.read()
-
-
+	ifile = open(filename, 'r')
 	if pinjung_mode == "unstrict":
 		
-		with open(filename) as dzdw:
+		with open(filename) as ifile:
 			while True :
-				c = dzdw.read(1)
+				c = ifile.read(1)
 				if c=="ㅇ":
 					print("안녕 세계")
 				if c=="ㅈ":
@@ -77,9 +76,9 @@ def interpret(filename):
 
 	else :
 
-		with open(filename) as dzdw:
+		with open(filename) as ifile:
 			while True:
-				c = dzdw.read(1)
+				c = ifile.read(1)
 				if c=="ㅇ":
 					print("안녕 세계")
 				if c=="ㅈ":
@@ -91,7 +90,15 @@ def interpret(filename):
 
 
 if len(sys.argv) == 1:          
-  print ("Please input InJung File.\nPInJung V."+ pinjung_version+"\nMode: "+pinjung_mode)
+
+
+  try:
+        print (colored('Error! ','red') +"No File Supplied.\n"+colored('Version: ','green')+ pinjung_version+colored('\nMode: ','green')+pinjung_mode)
+  except:
+      print("Error! No File Supplied.\nWarning! Please Install termcolor to more colorful messages!\nVersion: "+pinjung_version +"\nMode: "+pinjung_mode)
   exit(1)
+
+
+
 interpret(sys.argv[1])
 
