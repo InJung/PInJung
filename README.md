@@ -14,7 +14,30 @@ Python InJung
 안녕 세계
 안녕 세계
 
-### Input
+
+### Input 
+```injung
+ㅇ
+```
+
+### Output 
+
+안녕 세계
+
+
+### Input 
+```injung
+ㅇㅈㅇㅇㅇㅇㅇㅇㅇ
+```
+
+### Output 
+
+안녕 세계
+
+
+
+
+### Input (In Unstrict mode)
 ```injung
 ㅊ(ㅋㅌㅋㅌ)ㅈ
 ```
