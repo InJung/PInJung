@@ -1,108 +1,76 @@
 # PinJung 
 # Copyright HyungJu SUNG <sungkisa@naver.com>
-# 0.1.2: Fixed command"ㅊ". 
+# 0.1.1: code cleaning, applied color to the terminal using the termcolor
 
 import sys
-try :
-	from termcolor import colored
-except:
-	pass
-pinjung_mode = "unstrict" #Default: strict
+from termcolor import colored
+pinjung_mode = "strict" #Default: strict
 pinjung_version = "0.1.1"
 
 def interpret(filename):
 	ifile = open(filename, 'r')
-	output=""
-	if pinjung_mode == "unstrict":	
+	if pinjung_mode == "unstrict":
+		
 		with open(filename) as ifile:
 			while True :
 				c = ifile.read(1)
 				if c=="ㅇ":
 					print("안녕 세계")
 				if c=="ㅈ":
-					print(output)
 					exit()
-
 				if c=="ㄱ":
-					#print("a")
-					output=output+"a"
+					print("a")
 				if c=="ㄴ":
-					#print("b")
-					output=output+"b"
+					print("b")
 				if c=="ㄷ":
-					#print("c")
-					output=output+"c"
+					print("c")
 				if c=="ㄹ":
-					#print("d")
-					output=output+"d"
+					print("d")
 				if c=="ㅁ":
-					#print("e")
-					output=output+"e"
+					print("e")
 				if c=="ㅂ":
-					#print("f")
-					output=output+"f"
+					print("f")
 				if c=="ㅅ":
-					#print("g")
-					output=output+"g"
+					print("g")
 				if c=="ㅋ":
-					#print("h")
-					output=output+"h"
+					print("h")
 				if c=="ㅌ":
-					#print("i")
-					output=output+"i"
+					print("i")
 				if c=="ㅍ":
-					#print("j")
-					output=output+"j"
+					print("j")
 				if c=="ㅎ":
-					#print("k")
-					output=output+"k"
+					print("k")
 				if c=="0":
-					#print("l")
-					output=output+"l"
+					print("l")
 				if c=="1":
-					#print("m")
-					output=output+"m"
+					print("m")
 				if c=="2":
-					#print("n")
-					output=output+"n"
+					print("n")
 				if c=="3":
-					#print("o")
-					output=output+"o"
+					print("o")
 				if c=="4":
-					#print("p")
-					output=output+"p"
+					print("p")
 				if c=="5":
-					#print("q")
-					output=output+"q"
+					print("q")
 				if c=="6":
-					#print("r")
-					output=output+"r"
+					print("r")
 				if c=="7":
-					#print("s")
-					output=output+"s"
+					print("s")
 				if c=="8":
-					#print("t")
-					output=output+"t"
+					print("t")
 				if c=="9":
-					#print("u")
-					output=output+"u"
+					print("u")
 				if c=="ㅏ":
-					#print("v")
-					output=output+"v"
+					print("v")
 				if c=="ㅑ":
-					#print("w")
-					output=output+"w"
+					print("w")
 				if c=="ㅓ":
-					#print("x")
-					output=output+"x"
+					print("x")
 				if c=="ㅕ":
-					#print("y")
-					output=output+"y"
+					print("y")
 				if c=="ㅗ":
-					#print("z")
-					output=output+"z"
+					print("z")
 				if not c:
-					print(output)
 					exit()
 
 
@@ -133,5 +101,4 @@ if len(sys.argv) == 1:
 
 
 interpret(sys.argv[1])
-
 
